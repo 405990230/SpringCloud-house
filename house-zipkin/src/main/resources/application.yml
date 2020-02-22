@@ -1,0 +1,27 @@
+management:
+  metrics:
+    web:
+      server:
+        autoTimeRequests: false
+server:
+  port: 8666
+spring:
+  application:
+    name: server-zipkin #此实例注册到eureka服务端的name
+#zipkin:
+#  storage:
+#    type: elasticsearch
+#    elasticsearch:
+#      cluster: elasticsearch
+#      hosts: http://localhost:9200
+#      index: zipkin
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8777/eureka/ #eureka服务端提供的注册地址 参考服务端配置的这个路径
+  instance:
+    instance-id: zipkin-1 #此实例注册到eureka服务端的唯一的实例ID
+    prefer-ip-address: true #是否显示IP地址
+    leaseRenewalIntervalInSeconds: 10
+    leaseExpirationDurationInSeconds: 30

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.2.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.web.house</groupId>
+    <artifactId>SpringCloud-house</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Finchley.SR2</spring-cloud.version>
+        <mysql.version>6.0.6</mysql.version>
+        <mybatis.version>2.0.1</mybatis.version>
+        <druid.version>1.1.10</druid.version>
+        <guava.version>28.2-jre</guava.version>
+        <lombok.version>1.18.0</lombok.version>
+        <logbook.version>1.13.0</logbook.version>
+        <fastjson.version>1.2.49</fastjson.version>
+        <httpclient.version>4.5.6</httpclient.version>
+        <java-jwt.version>3.8.0</java-jwt.version>
+        <commons-lang3.version>3.7</commons-lang3.version>
+        <commons-beanutils.version>1.9.3</commons-beanutils.version>
+        <springfox.version>2.9.2</springfox.version>
+        <jsoup.version>1.8.3</jsoup.version>
+        <disruptor.version>3.4.1</disruptor.version>
+        <zipkin.version>2.11.8</zipkin.version>
+        <jedis.version>2.9.0</jedis.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>2.5</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+    <modules>
+        <module>house-user</module>
+        <module>house-eureka</module>
+        <module>house-service</module>
+        <module>house-comment</module>
+        <module>house-hystrixdashboard</module>
+        <module>house-zipkin</module>
+        <module>house-zuul</module>
+        <module>house-web</module>
+    </modules>
+</project>
